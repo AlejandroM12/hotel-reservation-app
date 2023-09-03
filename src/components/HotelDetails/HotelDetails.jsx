@@ -8,6 +8,7 @@ import {
   CardMedia,
 } from '@mui/material';
 import fetchHotelDetail from '../../hooks/useHotelDetail';
+import { BookingForm } from '../BookingForm';
 
 const HotelDetails = () => {
   const [match, params] = useRoute('/hotel/:id');
@@ -42,7 +43,9 @@ const HotelDetails = () => {
           {hotel.description}
         </Typography>
       </CardContent>
-      <CardActions>{/* Formulario */}</CardActions>
+      <CardActions>
+        <BookingForm hotel={hotel} />
+      </CardActions>
     </Card>
   );
 };
