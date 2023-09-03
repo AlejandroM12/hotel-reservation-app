@@ -1,0 +1,52 @@
+{
+  "hotels": [
+    {
+      "id": 1,
+      "name": "Hotel Ritz",
+      "description": "Hotel de lujo",
+      "image": "/assets/hotel1.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Hotel Paradise",
+      "description": "Cerca del océano con vistas impresionantes",
+      "image": "/assets/hotel2.jpg"
+    },
+    {
+      "id": 3,
+      "name": "Mountain Retreat",
+      "description": "Rodeado de montañas y naturaleza",
+      "image": "/assets/hotel3.jpg"
+    },
+    {
+      "id": 4,
+      "name": "City Central",
+      "description": "Ubicado en el corazón de la ciudad",
+      "image": "/assets/hotel4.jpg"
+    },
+    {
+      "id": 5,
+      "name": "Lakeside Resort",
+      "description": "Perfecto para escapadas tranquilas junto al lago",
+      "image": "/assets/hotel5.jpg"
+    },
+    {
+      "id": 6,
+      "name": "Desert Oasis",
+      "description": "Un respiro de lujo en el corazón del desierto",
+      "image": "/assets/hotel6.jpg"
+    },
+    {
+      "id": 7,
+      "name": "Island Getaway",
+      "description": "Resort de lujo en una isla privada",
+      "image": "/assets/hotel7.jpg"
+    },
+    {
+      "id": 8,
+      "name": "Forest Lodge",
+      "description": "Experiencia rústica rodeada de bosques",
+      "image": "/assets/hotel8.jpg"
+    }
+  ]
+}
