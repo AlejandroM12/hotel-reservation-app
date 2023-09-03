@@ -9,6 +9,7 @@ import {
 } from '@mui/material';
 import fetchHotelDetail from '../../hooks/useHotelDetail';
 import { BookingForm } from '../BookingForm';
+import { ContainerDetail } from '../../layouts';
 
 const HotelDetails = () => {
   const [match, params] = useRoute('/hotel/:id');
@@ -28,25 +29,27 @@ const HotelDetails = () => {
   if (error) return <div>Error fetching hotel! {error.message}</div>;
 
   return (
-    <Card sx={{ maxWidth: 345, background: '#e8e8e8' }}>
-      <CardMedia
-        component='img'
-        sx={{ height: 140 }}
-        image={hotel.image}
-        title={hotel.name}
-      />
-      <CardContent>
-        <Typography gutterBottom variant='h5' component='div'>
-          {hotel.name}
-        </Typography>
-        <Typography variant='body2' color='text.secondary'>
-          {hotel.description}
-        </Typography>
-      </CardContent>
-      <CardActions>
-        <BookingForm hotel={hotel} />
-      </CardActions>
-    </Card>
+    <ContainerDetail>
+      <Card sx={{ maxWidth: 345, background: '#e8e8e8' }}>
+        <CardMedia
+          component='img'
+          sx={{ height: 140 }}
+          image={hotel.image}
+          title={hotel.name}
+        />
+        <CardContent>
+          <Typography gutterBottom variant='h5' component='div'>
+            {hotel.name}
+          </Typography>
+          <Typography variant='body2' color='text.secondary'>
+            {hotel.description}
+          </Typography>
+        </CardContent>
+        <CardActions>
+          <BookingForm hotel={hotel} />
+        </CardActions>
+      </Card>
+    </ContainerDetail>
   );
 };
 

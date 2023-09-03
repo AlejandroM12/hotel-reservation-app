@@ -1,12 +1,13 @@
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Route, Switch } from 'wouter';
-import { HotelDetails, HotelList } from './components';
+import { HotelDetails, HotelList, Navbar } from './components';
 import { Toaster } from 'react-hot-toast';
 
 function App() {
   const client = new QueryClient();
   return (
     <>
+      <Navbar />
       <Toaster position='bottom-center' reverseOrder={false} />
       <QueryClientProvider client={client}>
         <Switch>

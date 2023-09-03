@@ -7,11 +7,18 @@ import {
   CardMedia,
   Typography,
   Stack,
+  useTheme,
+  useMediaQuery,
 } from '@mui/material';
 import listHotels from '../../hooks/useList';
 import { Link } from 'wouter';
+import { ContainerLayout } from '../../layouts';
 
 const HotelList = () => {
+  const isBetween768And1280 = useMediaQuery(
+    '(min-width:768px) and (max-width:1279px)'
+  );
+
   const {
     data: hotels,
     error,
@@ -20,17 +27,30 @@ const HotelList = () => {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error fetching hotels! {error.message}</div>;
   return (
-    <>
-      <Typography variant='h4' component='h2'>
-        Booking App
-      </Typography>
-      <Stack spacing={2}>
+    <ContainerLayout>
+      <Stack
+        spacing={2}
+        component={'div'}
+        sx={{
+          disply: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          justifyContent: isBetween768And1280
+            ? 'space-around'
+            : 'space-between',
+        }}
+      >
         {hotels.map((hotel) => (
-          <Link key={hotel.id} href={`/hotel/${hotel.id}`}>
-            <Card sx={{ maxWidth: 345, background: '#e8e8e8' }}>
+          <Link
+            key={hotel.id}
+            href={`/hotel/${hotel.id}`}
+            style={{ flexBasis: 'calc(33.33% - 16px', margin: '8px' }}
+          >
+            <Card sx={{ maxWidth: 345, width: '100%', background: '#e8e8e8' }}>
               <CardMedia
                 component='img'
-                sx={{ height: 140 }}
+                sx={{ height: 200, objectFit: 'cover' }}
                 image={hotel.image}
                 title={hotel.name}
               />
@@ -49,7 +69,7 @@ const HotelList = () => {
           </Link>
         ))}
       </Stack>
-    </>
+    </ContainerLayout>
   );
 };
 
